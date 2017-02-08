@@ -1,16 +1,15 @@
 package com.galvanize;
+import java.util.List;
+import java.util.ArrayList;
 
-public class Address{
+
+public class Address {
+  private Object object;
   private String street;
   private String city;
   private String state;
   private String zip;
 
-
-
-
-  // public gKKetAddress(){
-  // };
   public Address(String newStreet, String newCity, String newState, String newZip){
     street = newStreet;
     city = newCity;
@@ -44,4 +43,7 @@ public class Address{
   public String toString(){
     return street + ", " + city + ", " + state + " " + zip;
   }
+
+
+
 }
