@@ -30,13 +30,13 @@ public class BusinessTest {
         assertAddressableAddAddress(addressable);
     }
     //
-    // @Test
-    // public void test03_businessClassShouldExist() {
-    //     Class<?> business = assertBusinessClass();
-    //     assertBusinessImplementsAddressable(business);
-    //     assessBusinessConstructor(business);
-    //     assessAddressGetterAndSetter(business);
-    // }
+    @Test
+    public void test03_businessClassShouldExist() {
+        Class<?> business = assertBusinessClass();
+        assertBusinessImplementsAddressable(business);
+        assessBusinessConstructor(business);
+        assessAddressGetterAndSetter(business);
+    }
     //
     private void assessBusinessConstructor(Class<?> businessClass) {
         Object business;
@@ -89,6 +89,7 @@ public class BusinessTest {
 
             Method getAddressesMethod = businessClass.getMethod("getAddresses");
             List<?> addresses = (List) getAddressesMethod.invoke(business);
+
             assertEquals("Expected addAddress / getAddresses to work but they didn't", address, addresses.get(0));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
